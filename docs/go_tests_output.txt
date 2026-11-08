@@ -1,0 +1,26 @@
+=== RUN   TestTagsHandler_EmptyQuery
+=== RUN   TestTagsHandler_EmptyQuery/q_отсутствует
+=== RUN   TestTagsHandler_EmptyQuery/q_пустой
+=== RUN   TestTagsHandler_EmptyQuery/q_из_одних_пробелов
+--- PASS: TestTagsHandler_EmptyQuery (0.00s)
+    --- PASS: TestTagsHandler_EmptyQuery/q_отсутствует (0.00s)
+    --- PASS: TestTagsHandler_EmptyQuery/q_пустой (0.00s)
+    --- PASS: TestTagsHandler_EmptyQuery/q_из_одних_пробелов (0.00s)
+=== RUN   TestNormalizeQuery
+=== RUN   TestNormalizeQuery/нижний_регистр
+=== RUN   TestNormalizeQuery/пробелы_по_краям
+=== RUN   TestNormalizeQuery/повторные_пробелы_внутри
+=== RUN   TestNormalizeQuery/все_вместе
+=== RUN   TestNormalizeQuery/уже_нормализовано
+=== RUN   TestNormalizeQuery/пустая_строка
+=== RUN   TestNormalizeQuery/только_пробелы
+--- PASS: TestNormalizeQuery (0.00s)
+    --- PASS: TestNormalizeQuery/нижний_регистр (0.00s)
+    --- PASS: TestNormalizeQuery/пробелы_по_краям (0.00s)
+    --- PASS: TestNormalizeQuery/повторные_пробелы_внутри (0.00s)
+    --- PASS: TestNormalizeQuery/все_вместе (0.00s)
+    --- PASS: TestNormalizeQuery/уже_нормализовано (0.00s)
+    --- PASS: TestNormalizeQuery/пустая_строка (0.00s)
+    --- PASS: TestNormalizeQuery/только_пробелы (0.00s)
+PASS
+ok  	market-tags	0.006s

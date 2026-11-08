@@ -22,6 +22,9 @@
 │   ├── 03_create_search_tags.sql   # CREATE TABLE search_tags
 │   ├── 04_build_search_tags.sql    # INSERT — построение топ-10 тегов
 │   └── 05_checks.sql               # SQL-проверки из задания
+├── docs/
+│   ├── sql_checks_output.txt
+│   └── go_tests_output.txt
 ├── docker-compose.yml
 ├── go.mod
 ├── go.sum
@@ -171,8 +174,8 @@ Go-сервис читает её так: `SELECT tag, users FROM search_tags WH
 
 ## Проверки
 
-- `sql/05_checks.sql` — 4 SQL-проверки из задания.
-- `go test -v ./...` — 2 Go-теста (нормализация + пустой `q` → 400).
+- `sql/05_checks.sql` — 4 SQL-проверки из задания. Фактический вывод: `docs/sql_check_output.txt`.
+- `go test -v ./...` — 2 Go-теста (нормализация + пустой `q` → 400). Фактический вывод: `docs/go_test_output.txt`.
 
 ## Бонус: инкрементальный пересчёт
 
