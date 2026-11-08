@@ -10,6 +10,7 @@
 - **Docker** - запуск ClickHouse локально.
 
 ## Структура
+```
 .
 ├── main.go                    # HTTP-сервис (API + HTML)
 ├── normalize_test.go          # unit-тест нормализации q
@@ -21,9 +22,11 @@
 │   ├── 03_create_search_tags.sql   # CREATE TABLE search_tags
 │   ├── 04_build_search_tags.sql    # INSERT — построение топ-10 тегов
 │   └── 05_checks.sql               # SQL-проверки из задания
+├── docker-compose.yml
 ├── go.mod
 ├── go.sum
 └── README.md
+```
 
 ## Как запустить
 
@@ -39,6 +42,21 @@ docker run -d \
   -e CLICKHOUSE_PASSWORD=goservice \
   clickhouse/clickhouse-server
 ```
+
+Альтернатива — через `docker-compose.yml` (файл в корне):
+
+```bash
+docker compose up -d
+```
+
+**Важно:** если ClickHouse уже запущен через `docker run`, сначала останови и удали старый контейнер, иначе compose упрётся в конфликт имён:
+
+```bash
+docker stop clickhouse-server
+docker rm clickhouse-server
+```
+
+Данные в volume `clickhouse_data` сохранятся — compose подхватит его (в `docker-compose.yml` указано `external: true`).
 
 ### 2. Загрузить датасет в контейнер
 
