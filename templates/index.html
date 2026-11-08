@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Поиск тегов</title>
+    <style>
+        body { font-family: sans-serif; max-width: 640px; margin: 40px auto; padding: 0 16px; }
+        h1 { margin-bottom: 24px; }
+        form { display: flex; gap: 8px; }
+        input[type="text"] { flex: 1; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 8px 16px; font-size: 16px; cursor: pointer; background: #0066cc; color: white; border: none; border-radius: 4px; }
+        button:hover { background: #0055aa; }
+        .tags { list-style: none; padding: 0; margin: 20px 0 0; }
+        .tags li { margin: 6px 0; }
+        .tags a { color: #0645ad; text-decoration: none; }
+        .tags a:hover { text-decoration: underline; }
+        .tag-users { color: #666; font-size: 0.9em; margin-left: 6px; }
+        .empty { color: #666; margin-top: 20px; font-style: italic; }
+    </style>
+</head>
+<body>
+    <h1>Поиск тегов</h1>
+
+    <form method="get" action="/">
+        <input type="text" name="q" value="{{.Query}}" placeholder="Введите запрос..." autofocus>
+        <button type="submit">Найти</button>
+    </form>
+
+    {{if .Query}}
+        {{if .Tags}}
+        <ul class="tags">
+            {{range .Tags}}
+            <li>
+                <a href="/?q={{.Tag}}">{{.Tag}}</a>
+                <span class="tag-users">({{.Users}})</span>
+            </li>
+            {{end}}
+        </ul>
+        {{else}}
+        <p class="empty">Для этого запроса пока нет тегов</p>
+        {{end}}
+    {{end}}
+</body>
+</html>
